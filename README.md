@@ -1,4 +1,5 @@
 # I2C-Mock-Device
+
 Mock I2C Client with programmable address and register contents
 
 This revision is based around the STM32F411 microcontroller.  This project is intended to be developed outside of the STM32CubeIDE environment.  Instead, STM32CubeMX is used for pin configuration and peripheral initialization, and binaries are generated using the CMake build system.  VSCode with the STM32 and Cortex-Debug extensions is recommended for development.
@@ -8,8 +9,6 @@ This revision is based around the STM32F411 microcontroller.  This project is in
 - `cmake/`: CubeMX generated CMake files
 - `Core/`: CubeMX generated source files - **main.c is in this directory**
 - `Drivers/`: External drivers and libraries
-- `Middlewares/`: RTOS and other middleware libraries
-- `Templates/`: Template files for user source and header files
 - **`User/`**: User created source files - **This is where you should put your code**
 - `build/`: Temporary Build directory
 - CMakelists.txt: Main CMake file - **Add any new source files here**
