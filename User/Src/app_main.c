@@ -29,8 +29,6 @@ static int find_reg_index(uint8_t addr);
  */
 void app_init(void)
 {
-    /* Make sure hi2c1.Init is fully populated before this call,
-       e.g. by CubeMX MX_I2C1_Init() or manual initialization. */
     hi2c1.Init.OwnAddress1 = MOCK_I2C_ADDRESS << 1; /* STM32 expects left-shifted */
     if (HAL_I2C_Init(&hi2c1) != HAL_OK)
     {
