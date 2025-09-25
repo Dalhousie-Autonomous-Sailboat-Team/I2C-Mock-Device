@@ -1,2 +1,36 @@
 # I2C-Mock-Device
 Mock I2C Client with programmable address and register contents
+
+This revision is based around the STM32F411 microcontroller.  This project is intended to be developed outside of the STM32CubeIDE environment.  Instead, STM32CubeMX is used for pin configuration and peripheral initialization, and binaries are generated using the CMake build system.  VSCode with the STM32 and Cortex-Debug extensions is recommended for development.
+
+## Project Structure
+
+- `cmake/`: CubeMX generated CMake files
+- `Core/`: CubeMX generated source files - **main.c is in this directory**
+- `Drivers/`: External drivers and libraries
+- `Middlewares/`: RTOS and other middleware libraries
+- `Templates/`: Template files for user source and header files
+- **`User/`**: User created source files - **This is where you should put your code**
+- `build/`: Temporary Build directory
+- CMakelists.txt: Main CMake file - **Add any new source files here**
+
+## Getting Started
+
+**This guide assumes you are using VSCode.**
+
+1. Ensure **Cortex-Debug** and **STM32 VS Code Extension** are installed in VSCode.
+2. Ensure **STM32CubeCLT** is installed on your system and added to your PATH.
+3. Ensure **STM32CubeMX** is installed on your system.
+4. Ensure the **J-Link** drivers are installed on your system and added to your PATH.
+5. Open the project folder in VSCode.
+6. Run the `CMake: Configure` command from the command palette.
+7. Run the `CMake: Build` command from the command palette.
+8. Connect your J-Link debugger to the board.
+9. Ensure the board is powered on.
+10. Run the `CMake: Debug` command from the command palette to start a debug session.
+
+## Debugging
+
+If you get errors relating to unknown commands, ensure that both STM32CubeCLT and J-Link are properly added to your PATH.
+
+If you get errors relating to the build system, make sure you have the STM32CubeCLT installed and added to your PATH.
